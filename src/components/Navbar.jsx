@@ -61,8 +61,8 @@ const Navbar = () => {
           <li><a href="#careers" className={`nav-link ${activeSection === 'careers' ? 'active' : ''}`} onClick={(e) => scrollTo(e, '#careers')}>Careers</a></li>
           <li><a href="#contact" className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`} onClick={(e) => scrollTo(e, '#contact')}>Contact</a></li>
         </ul>
-        <button 
-          className={`nav-toggle ${isOpen ? 'open' : ''}`} 
+        <button
+          className={`nav-toggle ${isOpen ? 'open' : ''}`}
           id="nav-toggle"
           aria-label="Toggle navigation menu"
           onClick={() => setIsOpen(!isOpen)}

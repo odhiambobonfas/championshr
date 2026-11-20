@@ -19,11 +19,11 @@ const Hero = () => {
     <section className="hero" id="home">
       <div className="hero-background">
         <img 
-          src="/images/WhatsApp Image 2026-06-24 at 4.31.13 PM.jpeg" 
+          src="./images/WhatsApp Image 2026-06-24 at 4.31.13 PM.jpeg" 
           alt="Champions HR Consultancy" 
           className="hero-bg-image"
           onError={(e) => {
-            e.target.src = '/images/hero.jpg';
+            e.target.src = './images/hero.jpg';
           }}
         />
         <div className="hero-overlay"></div>
