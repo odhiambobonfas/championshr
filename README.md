@@ -43,13 +43,13 @@ This application faithfully reproduces the complete DOM structure, layout, typog
      - Kevin Chahenza (CEO)
      - Kallah Stephen Nzyoka (Managing Director)
      - Antony Kimani (Lead Recruiter)
-     - Khama Chiama (IT Manager)
+     - Bonfas Othina (IT Manager)
 8. **Careers Section** (`src/components/Careers.jsx`):
    - Career opportunities with position cards and interactive "Apply Now" triggers.
 9. **Interactive Application / Consultation Modal** (`src/components/ApplicationModal.jsx`):
    - Form handling for job applications and consultation scheduling.
 10. **Contact Section** (`src/components/Contact.jsx`):
-    - Exact location (Nairobi, Kenya), email (ChampionsHrLimited@gmail.com), and phone (+254 799 456 299).
+    - Location (Nairobi, Kenya), email (info@championshr.co.ke), and phone (0141209499).
     - Functional interactive form with validation, submission state, and response alerts.
 11. **Footer** (`src/components/Footer.jsx`):
     - Company branding, quick links, services directory, social links (LinkedIn, Twitter, Facebook), and copyright notice.

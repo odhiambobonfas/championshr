@@ -56,7 +56,7 @@ const Team = () => {
                 <path d="M25 130 Q75 90 125 130" fill="#94a3b8" />
               </svg>
             </div>
-            <h3 className="team-name">Khama Chiama</h3>
+            <h3 className="team-name">Bonfas Othina</h3>
             <p className="team-role">IT Manager</p>
             <p className="team-bio">Expert in technology solutions and digital infrastructure</p>
           </div>

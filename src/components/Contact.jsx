@@ -65,8 +65,8 @@ const Contact = () => {
               <div className="contact-details">
                 <h4>Email</h4>
                 <p>
-                  <a href="mailto:ChampionsHrLimited@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>
-                    ChampionsHrLimited@gmail.com
+                  <a href="mailto:info@championshr.co.ke" style={{ color: 'inherit', textDecoration: 'none' }}>
+                    info@championshr.co.ke
                   </a>
                 </p>
               </div>
@@ -81,8 +81,8 @@ const Contact = () => {
               <div className="contact-details">
                 <h4>Phone</h4>
                 <p>
-                  <a href="tel:+254799456299" style={{ color: 'inherit', textDecoration: 'none' }}>
-                    +254 799 456 299
+                  <a href="tel:0141209499" style={{ color: 'inherit', textDecoration: 'none' }}>
+                    0141209499
                   </a>
                 </p>
               </div>
