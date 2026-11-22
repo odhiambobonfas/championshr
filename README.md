@@ -45,13 +45,11 @@ This application faithfully reproduces the complete DOM structure, layout, typog
      - Antony Kimani (Lead Recruiter)
      - Bonfas Othina (IT Manager)
 8. **Careers Section** (`src/components/Careers.jsx`):
-   - Career opportunities with position cards and interactive "Apply Now" triggers.
-9. **Interactive Application / Consultation Modal** (`src/components/ApplicationModal.jsx`):
-   - Form handling for job applications and consultation scheduling.
-10. **Contact Section** (`src/components/Contact.jsx`):
-    - Location (Nairobi, Kenya), email (info@championshr.co.ke), and phone (0141209499).
-    - Functional interactive form with validation, submission state, and response alerts.
-11. **Footer** (`src/components/Footer.jsx`):
+   - Career opportunities and company culture overview.
+9. **Contact Section** (`src/components/Contact.jsx`):
+   - Location (Nairobi, Kenya), email (info@championshr.co.ke), and phone (0141209499).
+   - Functional interactive form with validation, submission state, and response alerts.
+10. **Footer** (`src/components/Footer.jsx`):
     - Company branding, quick links, services directory, social links (LinkedIn, Twitter, Facebook), and copyright notice.
 
 ## Getting Started
