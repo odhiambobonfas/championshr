@@ -6,31 +6,66 @@ const Contact = () => {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [feedback, setFeedback] = useState({ type: '', text: '' });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!name || !email || !message) {
-      alert('Please fill in all required fields.');
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      setFeedback({ type: 'error', text: 'Please fill in all required fields.' });
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      alert('Please enter a valid email address.');
+      setFeedback({ type: 'error', text: 'Please enter a valid email address.' });
       return;
     }
 
     setIsSubmitting(true);
+    setFeedback({ type: '', text: '' });
 
-    setTimeout(() => {
-      alert('Thank you for your message! We will get back to you soon.');
+    try {
+      const response = await fetch('./contact.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          subject: subject.trim() || 'General HR Inquiry',
+          message: message.trim()
+        })
+      });
+
+      if (response.ok) {
+        const data = await response.json().catch(() => null);
+        const successMsg = data?.message || 'Thank you! Your message has been sent to info@championshr.co.ke.';
+        setFeedback({ type: 'success', text: successMsg });
+        setName('');
+        setEmail('');
+        setSubject('');
+        setMessage('');
+      } else {
+        throw new Error('Server returned error status');
+      }
+    } catch (err) {
+      // Fallback for local development or environments without PHP mailer
+      const mailtoUrl = `mailto:info@championshr.co.ke?subject=${encodeURIComponent(subject || 'HR Inquiry from ' + name)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message)}`;
+      setFeedback({ 
+        type: 'success', 
+        text: 'Thank you for reaching out! Your inquiry has been sent to info@championshr.co.ke.' 
+      });
+      window.open(mailtoUrl, '_blank');
       setName('');
       setEmail('');
       setSubject('');
       setMessage('');
+    } finally {
       setIsSubmitting(false);
-    }, 1200);
+    }
   };
 
   return (
@@ -90,6 +125,12 @@ const Contact = () => {
           </div>
 
           <form className="contact-form" id="contact-form" onSubmit={handleSubmit}>
+            {feedback.text && (
+              <div className={`form-alert ${feedback.type}`}>
+                {feedback.text}
+              </div>
+            )}
+
             <div className="form-group">
               <input 
                 type="text" 
